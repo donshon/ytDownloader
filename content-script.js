@@ -4,10 +4,9 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
       // Extract the YouTube video URL
       const videoUrl = window.location.href;
       console.log(`${videoUrl}`);
-
  
       // Call the external API to convert the YouTube video to MP3
-      const apiUrl = `https://youtube-mp3-downloader2.p.rapidapi.com/ytmp3/ytmp3/long_video.php?url=${videoUrl}`
+      const apiUrl = `https://youtube-mp3-downloader2.p.rapidapi.com/ytmp3/ytmp3/custom/?url=${videoUrl}&quality=320`
       const options = {
         method: 'GET',
         headers: {
