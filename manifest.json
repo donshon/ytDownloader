@@ -17,7 +17,12 @@
         "activeTab",
         "tabs",
         "webRequest",
-        "*://www.youtube.com/*"
+        "*://www.youtube.com/*",
+        "*://localhost/*",
+        "storage",
+        "<all_urls>",
+        "webRequestBlocking", 
+        "webNavigation"
     ]
 }
 

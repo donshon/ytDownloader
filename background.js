@@ -20,24 +20,26 @@ browser.runtime.onInstalled.addListener(() => {
 // Listen for messages from the content script
 browser.runtime.onMessage.addListener((message, sender) => {
   if (message.action === "startConversion") {
+    console.log("got message");
     const videoUrl = message.videoUrl;
-
-    // Call the external API to convert the YouTube video to MP3
-    const conversionApiUrl = "https://your-mp3-converter-api.com/convert";
+    browser.tabs.create({ url: videoUrl });
+    /* Call the external API to convert the YouTube video to MP3
+    const conversionApiUrl = "https://api.download-lagu-mp3.com/@api/json/mp3/";
     
-    fetch(`${conversionApiUrl}?url=${encodeURIComponent(videoUrl)}`)
+    fetch(`${conversionApiUrl}${vidID[1]}`)
       .then(response => response.json())
+      .then(response => console.log(response))
       .then(data => {
         if (data.success) {
           // Open the MP3 download link
-          browser.tabs.create({ url: data.mp3DownloadUrl });
+          browser.tabs.create({ url: response.vidInfo[1].dloadUrl });
         } else {
           console.error("Conversion failed:", data.error);
         }
       })
       .catch(error => {
         console.error("Error during conversion:", error);
-      });
+      }); */
   }
 });
 
