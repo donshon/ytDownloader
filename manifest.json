@@ -1,7 +1,7 @@
 {
     "manifest_version":2,
     "version":"1.0",
-    "name":"Test",
+    "name":"yt2mp3",
     "content_scripts": [
         {
           "matches": ["*://www.youtube.com/*"],
@@ -23,6 +23,11 @@
         "<all_urls>",
         "webRequestBlocking", 
         "webNavigation"
-    ]
+    ],
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "yt2mp3@gmail.com"
+    }
+}
 }
 

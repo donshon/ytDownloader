@@ -3,7 +3,7 @@ browser.runtime.onInstalled.addListener(() => {
     // Create a context menu item
     browser.contextMenus.create({
       id: "custom-context-menu", // Unique ID for this context menu item
-      title: "Custom Action",    // The label that will appear in the context menu
+      title: "Download as MP3",    // The label that will appear in the context menu
       contexts: ["all"],         // Show the context menu on any type of page
       documentUrlPatterns: ["*://www.youtube.com/watch*"] //only show on YT pages
     });
